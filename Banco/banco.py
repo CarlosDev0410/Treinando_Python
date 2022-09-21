@@ -50,7 +50,7 @@ def administrar_conta():
         administrar_conta()
 
     elif escolha == "5":
-        conta1.get_dados()
+        conta1.pega_dados()
         administrar_conta()
 
     elif escolha == "6":
