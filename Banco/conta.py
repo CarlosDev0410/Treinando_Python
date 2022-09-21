@@ -8,10 +8,12 @@ class Conta(pessoa.Pessoa):
         self.__saldo = 0
         self.__numero = random.randrange(1000, 2000)
 
-    def get_saldo(self):
+    @property
+    def pega_saldo(self):
         return self.__saldo
 
-    def get_dados(self):
+    @property
+    def pega_dados(self):
         return print("Agencia: {0}\nNúmero da conta: {1}\nNome: {2}\nIdade: {3}\nSexo: {4}\nEstado Civil: {5}\n\n".format(self.agencia, self.__numero, self.nome, self.idade, self.sexo, self.estado_civil))
 
     def altera_dados(self):
@@ -64,7 +66,7 @@ class Conta(pessoa.Pessoa):
             print("Você não tem saldo suficinte!\n")
         else:
             self.__saldo -= valor
-            print("Você sacou {}\nSaldo Atual: {}\n".format(valor, self.get_saldo()))
+            print("Você sacou {}\nSaldo Atual: {}\n".format(valor, self.pega_saldo))
 
     def extrato(self):
         print("Seus dados:\nAgencia: {0}\nConta: {1}\nTitular: {2}\nSaldo: {3}\n".format(self.agencia, self.__numero, self.nome.upper(), self.__saldo))
@@ -108,11 +110,11 @@ class Conta(pessoa.Pessoa):
         print("[1] Solteiro - [2] Casado - [3] Viúvo\n")
         estado_civil = input("=======:")
         if estado_civil == "1":
-            self.estado_civil = "Solteiro"
+            self.estado_civil = "Solteiro(a)"
         elif estado_civil == "2":
-            self.estado_civil = "Casado"
+            self.estado_civil = "Casado(a)"
         elif estado_civil == "3":
-            self.estado_civil = "Viúvo"
+            self.estado_civil = "Viúvo(a)"
         else:
             print("Entrada inválida!")
             self.abre_conta()
