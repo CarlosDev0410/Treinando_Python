@@ -1,7 +1,7 @@
-# Curso de Pyhton
+# Curso de Python
  Treinamento em Python
 
-## Aulas
+## O que foi aprendido nas Aulas
 * Input / Output
 * Estrutura de Dados
 * Listas
